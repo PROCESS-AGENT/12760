@@ -4,10 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     OPA REACT!!!
+     OPA REACT OKOK!!!
      OKOK
     </div>
   );
 }
 
-export default App; 
+export default App;  
