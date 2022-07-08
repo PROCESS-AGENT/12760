@@ -6,56 +6,85 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-//const nome = <h1>OPA, {nome} </h1>
 
-
-
-function Opa(props) {
-  return <h1>Opa, {props.name} {props.title} </h1>
-}
-/*
-function BoasVindas(props) {
-  return <Opa name= {props.name} title={props.title}>teste</Opa>
-}
-*/
-
-class BoasVindas extends React.Component {
-
+class Pesquisa extends React.Component {
   render() {
-
-    return <div>
-      <h1>OPAs, {this.props.name}</h1>
-    </div>
-
+    return <h1>Componente de pesquisa</h1>
   }
-
 }
+
+class ListaProdutos extends React.Component {
+  render() {
+    return <div>
+      <h2>Lista de resultados</h2>
+      <Categoria></Categoria>
+      <Itens></Itens>
+      <Itens></Itens>
+      <Itens></Itens>
+      <Categoria></Categoria>
+      <Itens></Itens>
+      <Itens></Itens>
+      <Itens></Itens>
+    </div>
+  }
+}
+
+class Categoria extends React.Component {
+  render() {
+    return <h3>Componente Categoria</h3>
+  }
+}
+class Itens extends React.Component {
+  render() {
+    return <h4>Componente Itens</h4>
+  }
+}
+class DadosBasicos extends React.Component {
+  render() {
+    return <div>
+      <p>Nome:</p>
+      <p>Sobrenome:</p>
+      <p>Idade:</p>
+    </div>
+  }
+}
+
+class Endereco extends React.Component {
+  render() {
+    return <div>
+      <h2>{this.props.tipo}</h2>
+      <p>Logradouro:</p>
+      <p>cep:</p>
+    </div>
+  }
+}
+
+class AreaAtuacao extends React.Component {
+  render() {
+    return <div>
+      <h2>{this.props.title}</h2>
+      <p>{this.props.description}</p>
+    </div>
+  }
+}
+
 
 
 root.render(
   <div>
-    <Opa name='teste'></Opa>
-    <BoasVindas name='Maria'>teste 567</BoasVindas>
-    <BoasVindas></BoasVindas>
-    <BoasVindas></BoasVindas>
-    <BoasVindas></BoasVindas>
-  </div>
+    <DadosBasicos></DadosBasicos>
+    <Endereco tipo='Residencial'></Endereco>
+    <Endereco tipo='Comercial'></Endereco>
+    <AreaAtuacao title='Gerente Comercial' description='Descrição 001' ></AreaAtuacao>
+    <AreaAtuacao title='Engenheiro' description='Descrição 002' ></AreaAtuacao>
+    <AreaAtuacao title='Teste' description='Descrição 003' ></AreaAtuacao>
 
+    {/* <Pesquisa></Pesquisa>
+    <ListaProdutos></ListaProdutos> */}
+  </div>
 );
 
-/*
-function tick() {
-  const element = (
-    <div>
-      <h1>Olá, Leonardo!</h1>
-      <h2>Hora agora: {new Date().toLocaleTimeString()}.</h2>
-    </div>
-  );
-  root.render(element, document.getElementById('root'));
-}
 
-setInterval(tick, 1000);
-*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
