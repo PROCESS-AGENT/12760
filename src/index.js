@@ -6,81 +6,42 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+class Relogio extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { date: new Date() }
 
-class Pesquisa extends React.Component {
-  render() {
-    return <h1>Componente de pesquisa</h1>
   }
-}
 
-class ListaProdutos extends React.Component {
-  render() {
-    return <div>
-      <h2>Lista de resultados</h2>
-      <Categoria></Categoria>
-      <Itens></Itens>
-      <Itens></Itens>
-      <Itens></Itens>
-      <Categoria></Categoria>
-      <Itens></Itens>
-      <Itens></Itens>
-      <Itens></Itens>
-    </div>
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
-}
 
-class Categoria extends React.Component {
-  render() {
-    return <h3>Componente Categoria</h3>
+  componentWillUnMount() {
+    clearInterval(this.timerID)
   }
-}
-class Itens extends React.Component {
-  render() {
-    return <h4>Componente Itens</h4>
-  }
-}
-class DadosBasicos extends React.Component {
-  render() {
-    return <div>
-      <p>Nome:</p>
-      <p>Sobrenome:</p>
-      <p>Idade:</p>
-    </div>
-  }
-}
 
-class Endereco extends React.Component {
+  tick() {
+    this.setState({ date: new Date() })
+    console.log(this.state.date)
+  }
+
   render() {
-    return <div>
-      <h2>{this.props.tipo}</h2>
-      <p>Logradouro:</p>
-      <p>cep:</p>
-    </div>
+    return (
+      <div>
+        <p>Opa!! do componente do Relógio!</p>
+        <h2>HOra agora: {this.state.date.toLocaleTimeString()} </h2>
+      </div>
+    );
   }
 }
-
-class AreaAtuacao extends React.Component {
-  render() {
-    return <div>
-      <h2>{this.props.title}</h2>
-      <p>{this.props.description}</p>
-    </div>
-  }
-}
-
 
 
 root.render(
   <div>
-    <DadosBasicos></DadosBasicos>
-    <Endereco tipo='Residencial'></Endereco>
-    <Endereco tipo='Comercial'></Endereco>
-    <AreaAtuacao title='Gerente Comercial' description='Descrição 001' ></AreaAtuacao>
-    <AreaAtuacao title='Engenheiro' description='Descrição 002' ></AreaAtuacao>
-    <AreaAtuacao title='Teste' description='Descrição 003' ></AreaAtuacao>
+    <Relogio>
 
-    {/* <Pesquisa></Pesquisa>
-    <ListaProdutos></ListaProdutos> */}
+    </Relogio>
   </div>
 );
 
