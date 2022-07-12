@@ -4,8 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     OPA REACT OKOK!!!
-     OKOK
+     App
     </div>
   );
 }
