@@ -4,45 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ListaService from './services/ListaService';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Opa from './components/Opa';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class Opa extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      lista: []
-    }
-  }
-
-  componentDidMount(){
-
-    var temp = ListaService.getLista().then((res) => {
-    
-      //console.log(res)
-      if(res.status == 200)
-      this.setState({lista: res.data})
-      
-    })
-    
-    
-  }
-
-  render() {
-    return (
-      <div className='teste'>
-        <h2>Opa! Lista de Produtos</h2> 
-        <ul>
-          { this.state.lista.map((produto) => <li key={produto.codigo}>{produto.codigo} - {produto.nome}</li>) }
-        </ul>
-      </div>
-    )
-  }
-}
 
 
-root.render(
-  <Lista />
+
+root.render(<div>
+  <Opa name="Opa passando pela props" />
+</div>
 )
 
 
