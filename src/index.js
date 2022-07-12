@@ -7,7 +7,7 @@ import ListaService from './services/ListaService';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class Lista extends React.Component {
+class Opa extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -19,19 +19,19 @@ class Lista extends React.Component {
 
     var temp = ListaService.getLista().then((res) => {
     
-      if(res.state == 200)
+      //console.log(res)
+      if(res.status == 200)
       this.setState({lista: res.data})
-      console.log(res.status)
-      console.log(res.data)
+      
     })
     
-    console.log(this.state.lista)
+    
   }
 
   render() {
     return (
-      <div>
-        <h2>Opa! Lista de Produtois</h2> 
+      <div className='teste'>
+        <h2>Opa! Lista de Produtos</h2> 
         <ul>
           { this.state.lista.map((produto) => <li key={produto.codigo}>{produto.codigo} - {produto.nome}</li>) }
         </ul>
