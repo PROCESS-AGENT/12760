@@ -11,11 +11,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
+
 root.render(<div>
-  <Opa name="Opa passando pela props" />
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>
 </div>
 )
-
 
 
 
