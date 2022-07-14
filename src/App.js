@@ -13,8 +13,8 @@ function App() {
       <div className="container">
        <Switch>
         <Route path="/" exact component={ListProductComponent}></Route>
-        <Route path="add-product" exact component={CreateProductComponent}></Route>
-        CreateProductComponent
+        <Route path="/add-product" exact component={CreateProductComponent}></Route>
+        
        </Switch>
       </div>
 

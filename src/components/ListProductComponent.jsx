@@ -46,9 +46,9 @@ class ListProductComponent extends React.Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.products.map(product =>
+                                this.state.products.map((product,index) =>
 
-                                    <tr key={product.id}>
+                                    <tr key={index}>
                                         <td>{product.codigo}</td>
                                         <td>{product.nome}</td>
                                         <td>{product.descricao}</td>
