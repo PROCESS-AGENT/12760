@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const BASE_URL =  "https://app-node-br.herokuapp.com/prd"
 
-class ListaService{
+class ProductService{
 
-    getLista(){
+    getProducts(){
         
         return axios.get(BASE_URL)
 
@@ -12,4 +12,4 @@ class ListaService{
 
 }
 
-export default new ListaService()
+export default new ProductService()

@@ -11,8 +11,11 @@ function App() {
     <Router>
       <HeaderComponent />
       <div className="container">
-        <ListProductComponent />
-        {/* <CreateProductComponent /> */}
+       <Switch>
+        <Route path="/" exact component={ListProductComponent}></Route>
+        <Route path="add-product" exact component={CreateProductComponent}></Route>
+        CreateProductComponent
+       </Switch>
       </div>
 
       <FooterComponent />

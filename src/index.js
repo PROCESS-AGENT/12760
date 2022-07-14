@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ListaService from './services/ListaService';
+import ListaService from './services/ProductService';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Opa from './components/Opa';
 const root = ReactDOM.createRoot(document.getElementById('root'));
