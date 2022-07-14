@@ -48,7 +48,7 @@ class ListProductComponent extends React.Component {
                             {
                                 this.state.products.map(product =>
 
-                                    <tr>
+                                    <tr key={product.id}>
                                         <td>{product.codigo}</td>
                                         <td>{product.nome}</td>
                                         <td>{product.descricao}</td>
