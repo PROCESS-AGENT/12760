@@ -1,5 +1,6 @@
 import React from "react";
-import ProductService from "../services/ProductService";
+import ProductServices from "../services/ProductService";
+
 
 class ListProductComponent extends React.Component {
     constructor(props) {
@@ -7,24 +8,26 @@ class ListProductComponent extends React.Component {
         this.state = {
             products: []
         }
-        this.addProduct = this.addProduct.bind(this)
-    }
 
+        this.addProduct = this.addProduct.bind(this);
+    }
 
     componentDidMount() {
-
-        //console.log('Opa');
-        ProductService.getProducts().then(res => {
-            console.log(res.data)
+        ProductServices.getProduts().then(res => {
             this.setState({ products: res.data })
+            console.log(res.data)
         })
-
     }
 
-    addProduct(){
-       // alert('Opa')
-       this.props.history.push('/add-product')
+    addProduct() {
+        this.props.history.push('/add-product')
     }
+
+    deleteProduct(codigo) {
+        this.props.history.push(`/delete-product/${codigo}`)
+    }
+
+
 
     render() {
         return (
@@ -46,13 +49,14 @@ class ListProductComponent extends React.Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.products.map((product,index) =>
-
+                                this.state.products.map((product, index) =>
                                     <tr key={index}>
-                                        <td>{product.codigo}</td>
-                                        <td>{product.nome}</td>
-                                        <td>{product.descricao}</td>
-                                        <td>Ações</td>
+                                        <td> {product.codigo} </td>
+                                        <td> {product.nome}</td>
+                                        <td> {product.descricao}</td>
+                                        <td>
+                                            <button className="btn btn-danger" onClick={() => this.deleteProduct(product.codigo)}>Excluir</button>
+                                        </td>
                                     </tr>
                                 )
                             }
@@ -61,6 +65,7 @@ class ListProductComponent extends React.Component {
 
                 </div>
             </div>
+
         )
     }
 }

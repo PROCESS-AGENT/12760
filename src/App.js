@@ -5,6 +5,7 @@ import HeaderComponent from './components/HeaderComponent'
 import FooterComponent from './components/FooterComponent'
 import ListProductComponent from './components/ListProductComponent'
 import CreateProductComponent from './components/CreateProductComponent'
+import DeleteProductComponent from './components/DeleteProductComponent';
 
 function App() {
   return (<div>
@@ -14,7 +15,7 @@ function App() {
        <Switch>
         <Route path="/" exact component={ListProductComponent}></Route>
         <Route path="/add-product" exact component={CreateProductComponent}></Route>
-        
+        <Route path="/delete-product/:codigo" component={DeleteProductComponent} ></Route>
        </Switch>
       </div>
 
