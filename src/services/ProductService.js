@@ -34,5 +34,10 @@ class ProductServices {
         return axios.delete(URL)
     }
 
+    updateProduct(product) {
+        let URL = BASE_URL + '/' + product.codigo;
+        return axios.put(URL, product)
+    }
+
 }
 export default new ProductServices()
